@@ -2,15 +2,21 @@ Summary:	OpenEXR interface to CTL (Color Transform Language)
 Summary(pl.UTF-8):	Interfejs OpenEXR do CTL (języka przekształceń kolorów)
 Name:		openexr_ctl
 Version:	1.0.1
-Release:	1
+Release:	2
 License:	BSD + IP clause
 Group:		Libraries
-Source0:	http://dl.sourceforge.net/ampasctl/%{name}-%{version}.tar.gz
+Source0:	http://downloads.sourceforge.net/ampasctl/%{name}-%{version}.tar.gz
 # Source0-md5:	035a68db3b1cc40fe99a7c4012d7f024
-URL:		http://www.oscars.org/council/ctl.html
+Patch0:		%{name}-include.patch
+Patch1:		%{name}-openexr2.patch
+Patch2:		%{name}-link.patch
+URL:		http://www.oscars.org/science-technology/council/projects/ctl.html
 BuildRequires:	OpenEXR-devel >= 1.6.1
+BuildRequires:	autoconf >= 2.50
+BuildRequires:	automake >= 1.6.3
 BuildRequires:	ctl-devel >= 1.4.1
 BuildRequires:	libstdc++-devel
+BuildRequires:	libtool >= 2:1.5
 BuildRequires:	pkgconfig
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -79,8 +85,15 @@ serii przekształceń CTL na piksele w pliku OpenEXR.
 
 %prep
 %setup -q
+%patch0 -p1
+%patch1 -p1
+%patch2 -p1
 
 %build
+%{__libtoolize}
+%{__aclocal} -I m4
+%{__autoconf}
+%{__automake}
 %configure
 %{__make}
 

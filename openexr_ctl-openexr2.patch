@@ -1,0 +1,19 @@
+--- openexr_ctl-1.0.1/IlmImfCtl/ImfCtlApplyTransforms.h.orig	2007-07-25 00:28:03.000000000 +0200
++++ openexr_ctl-1.0.1/IlmImfCtl/ImfCtlApplyTransforms.h	2013-03-28 22:00:00.596567336 +0100
+@@ -185,14 +185,10 @@
+ #include <string>
+ #include <vector>
+ #include <ImathBox.h>
++#include <ImfFrameBuffer.h>
++#include <ImfHeader.h>
+ #include <ImfThreading.h>
+ 
+-namespace Imf
+-{
+-    class Header;
+-    class FrameBuffer;
+-}
+-
+ namespace Ctl
+ {
+     class Interpreter;

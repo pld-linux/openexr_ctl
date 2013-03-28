@@ -1,0 +1,14 @@
+--- openexr_ctl-1.0.1/IlmImfCtl/Makefile.am.orig	2007-03-29 23:13:01.000000000 +0200
++++ openexr_ctl-1.0.1/IlmImfCtl/Makefile.am	2013-03-28 22:14:24.946531063 +0100
+@@ -4,9 +4,9 @@
+ 
+ INCLUDES = @CTL_CXXFLAGS@ @OPENEXR_CXXFLAGS@
+ 
+-AM_LDFLAGS = @CTL_LDFLAGS@ @OPENEXR_LDFLAGS@ @CTL_LIBS@ @OPENEXR_LIBS@
+-
++AM_LDFLAGS = @CTL_LDFLAGS@ @OPENEXR_LDFLAGS@
+ 
++libIlmImfCtl_la_LIBADD = @CTL_LIBS@ @OPENEXR_LIBS@
+ libIlmImfCtl_la_SOURCES = \
+ 	ImfCtlApplyTransforms.cpp \
+ 	ImfCtlApplyTransforms.h \
