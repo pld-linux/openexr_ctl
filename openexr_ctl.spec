@@ -1,8 +1,9 @@
+# NOTE: for versions >= 1.5 see ctl.spec
 Summary:	OpenEXR interface to CTL (Color Transform Language)
 Summary(pl.UTF-8):	Interfejs OpenEXR do CTL (języka przekształceń kolorów)
 Name:		openexr_ctl
 Version:	1.0.1
-Release:	2
+Release:	2.1
 License:	BSD + IP clause
 Group:		Libraries
 Source0:	http://downloads.sourceforge.net/ampasctl/%{name}-%{version}.tar.gz
